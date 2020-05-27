@@ -11,6 +11,7 @@ in
   home.packages = with pkgs; [
     exa
     fd
+    ripgrep
     htop
     mosh
     unstable.rust-analyzer
