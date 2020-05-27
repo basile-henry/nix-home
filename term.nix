@@ -10,25 +10,27 @@ in
 
   home.packages = with pkgs; [
     exa
-    bat
     fd
-    fzf
     htop
     mosh
-    starship
     unstable.rust-analyzer
 
     # Rust
     rustup
   ];
 
+  programs.bat = {
+    enable = true;
+    config.theme = "base16";
+  };
+
+  # Not with the packages, so that it also provides bash integration
+  programs.fzf.enable = true;
+  programs.starship.enable = true;
+
   programs.bash = {
     enable = true;
-
-    sessionVariables = {
-      EDITOR = "nvim";
-      BAT_THEME = "base16";
-    };
+    sessionVariables.EDITOR = "nvim";
 
     shellAliases = {
       ns = "nix-shell";
@@ -42,8 +44,6 @@ in
     };
 
     profileExtra = ''
-      eval "$(starship init bash)"
-
       BASE16_SHELL="${pkgs.base16-shell}"
       [ -n "$PS1" ] && \
           [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
