@@ -11,6 +11,9 @@
     extraConfig = ''
       set -g mouse on
       set-option -sa terminal-overrides ',*:RGB'
+
+      # Setup a workspace with `tmux work`
+      set -s command-alias[0] work='split-window -h -d -p 65 vim .; split-window -v; select-pane -t :.+'
       '';
 
     plugins = with pkgs; [
