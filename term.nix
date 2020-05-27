@@ -44,6 +44,12 @@ in
     };
 
     profileExtra = ''
+      # Fix nix path for multi-user nix Ubuntu setups
+      export NIX_PATH=/home/basile/.nix-defexpr/channels:$NIX_PATH
+
+      # For bash autocomplete
+      export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS
+
       BASE16_SHELL="${pkgs.base16-shell}"
       [ -n "$PS1" ] && \
           [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
