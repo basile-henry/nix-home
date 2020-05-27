@@ -30,7 +30,6 @@ in
 
   # Not with the packages, so that it also provides bash integration
   programs.fzf.enable = true;
-  programs.starship.enable = true;
 
   programs.bash = {
     enable = true;
@@ -55,6 +54,22 @@ in
           [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
               eval "$("$BASE16_SHELL/profile_helper.sh")"
       '';
+  };
+
+  programs.starship = {
+    enable = true;
+
+    settings = {
+      character = {
+        symbol = "➜";
+        error_symbol = "✗";
+        use_symbol_for_status = true;
+      };
+      cmd_duration.show_milliseconds = true;
+      nix_shell.use_name = true;
+      package.disabled = true;
+      aws.disabled = true;
+    };
   };
 
   programs.git = {
