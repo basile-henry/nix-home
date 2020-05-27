@@ -15,6 +15,9 @@ in
     mosh
     unstable.rust-analyzer
 
+    # Nix
+    nix-index
+
     # Rust
     rustup
   ];

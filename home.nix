@@ -4,6 +4,9 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  home.username = "basile";
+  home.homeDirectory = "/home/basile";
+
   imports = [
     ./gui.nix
     ./term.nix
