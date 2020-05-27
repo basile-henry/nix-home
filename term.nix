@@ -41,10 +41,6 @@ in
 
       hme = "(cd $HOME/.config/nixpkgs && vim .)";
       hms = "home-manager switch";
-
-      gst = "git status";
-      gco = "git checkout";
-      glol = "git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'";
     };
 
     profileExtra = ''
@@ -59,5 +55,17 @@ in
     enable = true;
     userName = "Basile Henry";
     userEmail = "bjm.henry@gmail.com";
+
+    aliases = {
+      s = "status";
+      co = "checkout";
+      lol = "log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'";
+    };
+
+    extraConfig = {
+      merge.conflictstyle = "diff3";
+    };
   };
+
+  programs.git.lfs.enable = true;
 }
