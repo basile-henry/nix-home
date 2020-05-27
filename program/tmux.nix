@@ -1,6 +1,9 @@
 { config, lib, pkgs, ... }:
 
 {
+  # Ensure locale is working well with tmux
+  home.sessionVariables.LOCALE_ARCHIVE = "${pkgs.glibcLocales}/lib/locale/locale-archive";
+
   programs.tmux = {
     enable = true;
     clock24 = true;

@@ -33,7 +33,6 @@ in
 
   programs.bash = {
     enable = true;
-    sessionVariables.EDITOR = "nvim";
 
     shellAliases = {
       ns = "nix-shell";
