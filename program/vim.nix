@@ -41,7 +41,7 @@
       let mapleader=" "
 
       " fzf
-      map <C-P> :GFiles?<CR>
+      map <C-P> :GFiles<CR>
 
       " NERDTree
       map <Leader>n :NERDTreeToggleVCS<CR>
