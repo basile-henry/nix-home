@@ -34,6 +34,9 @@ in
   programs.bash = {
     enable = true;
 
+    historyIgnore = [ "ls" "cd" ];
+    historyControl = [ "erasedups" "ignorespace" ];
+
     shellAliases = {
       ns = "nix-shell";
       nb = "nix-build";
