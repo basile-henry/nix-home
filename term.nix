@@ -75,7 +75,7 @@ in
         use_symbol_for_status = true;
       };
       cmd_duration.show_milliseconds = true;
-      nix_shell.use_name = true;
+      username.disabled = true;
       package.disabled = true;
       aws.disabled = true;
     };
