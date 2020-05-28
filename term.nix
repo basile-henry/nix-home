@@ -22,6 +22,11 @@ in
 
     # Rust
     rustup
+
+    # Haskell
+    ghc
+    ghcid
+    cabal-install
   ];
 
   programs.bat = {
