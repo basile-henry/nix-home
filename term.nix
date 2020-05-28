@@ -15,6 +15,7 @@ in
     htop
     mosh
     unstable.rust-analyzer
+    gitAndTools.hub
 
     # Nix
     nix-index
@@ -82,8 +83,16 @@ in
 
     aliases = {
       s = "status";
+      c = "commit";
+      d = "diff";
+      f = "fetch";
       co = "checkout";
+
       lol = "log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'";
+
+      w = "worktree";
+      wl = "worktree list";
+      wa = "worktree add";
     };
 
     extraConfig = {
