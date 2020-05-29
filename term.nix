@@ -15,7 +15,11 @@ in
     htop
     mosh
     unstable.rust-analyzer
+
+    # Dev
     gitAndTools.hub
+    watchexec
+    miniserve
 
     # Nix
     nix-index
