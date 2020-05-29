@@ -92,6 +92,9 @@ in
       d = "diff";
       f = "fetch";
       co = "checkout";
+      r = "rebase";
+      # Rebase with pre-commit check at each commit
+      rc = "rebase -x 'git reset --soft HEAD~1 && git commit -C HEAD@{1}'";
 
       lol = "log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'";
 
