@@ -1,7 +1,15 @@
 { config, pkgs, ... }:
 
+let unstable = import <nixpkgs-unstable> {};
+in
 {
   home.sessionVariables.EDITOR = "nvim";
+
+  home.packages = with pkgs; [
+    elmPackages.elm-language-server
+    python3Packages.python-language-server
+    unstable.rust-analyzer
+  ];
 
   programs.neovim = {
     enable = true;
@@ -41,16 +49,28 @@
       let mapleader=" "
 
       " fzf
-      map <C-P> :GFiles<CR>
+      noremap <C-P> :GFiles<CR>
 
       " NERDTree
-      map <Leader>n :NERDTreeToggleVCS<CR>
+      noremap <Leader>n :NERDTreeToggleVCS<CR>
 
       " LSP
+      let g:LanguageClient_loggingFile =  expand('~/.local/share/nvim/LanguageClient.log')
+      nnoremap <Leader>m :call LanguageClient_contextMenu()<CR>
+
       let g:LanguageClient_serverCommands = {
+        \ 'elm': ['elm-language-server'],
+        \ 'python': ['pyls'],
         \ 'rust': ['rust-analyzer'],
         \ }
+      let g:LanguageClient_rootMarkers = {
+        \ 'elm': ['elm.json'],
+        \ }
 
+      " LSP format on save
+      execute 'autocmd FileType '
+        \ . join(keys(g:LanguageClient_serverCommands), ',')
+        \ . ' autocmd BufWritePre <buffer> call LanguageClient#textDocument_formatting_sync()'
       '';
 
     plugins = with pkgs.vimPlugins; [
@@ -67,12 +87,22 @@
       # Language Server
       LanguageClient-neovim
 
+      # Elm
+      vim-elm-syntax
+
       # Git
       gitgutter
       fugitive
 
       # Nix
       vim-nix
+
+      # Python
+      jedi-vim
     ];
+
+    # Disable python 2 provider
+    withPython = false;
+    withRuby = false;
   };
 }

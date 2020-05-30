@@ -1,7 +1,5 @@
 { config, lib, pkgs, ... }:
 
-let unstable = import <nixpkgs-unstable> {};
-in
 {
   imports = [
     ./program/tmux.nix
@@ -14,7 +12,6 @@ in
     ripgrep
     htop
     mosh
-    unstable.rust-analyzer
 
     # Dev
     gitAndTools.hub
@@ -31,6 +28,12 @@ in
     ghc
     ghcid
     cabal-install
+    stylish-haskell
+
+    # Elm
+    elmPackages.elm
+    elmPackages.elm-analyse
+    elmPackages.elm-format
   ];
 
   programs.bat = {
