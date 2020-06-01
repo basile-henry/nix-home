@@ -6,6 +6,9 @@ in
   programs.alacritty = {
     enable = true;
     settings = {
+      window.startup_mode = "Maximized";
+      window.title = "Terminal";
+
       shell = {
         program = "bash";
         args = [ "-l" ];
