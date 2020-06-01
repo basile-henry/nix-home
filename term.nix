@@ -56,6 +56,8 @@
 
       hme = "(cd $HOME/.config/nixpkgs && vim .)";
       hms = "home-manager switch";
+
+      tombo = "mosh -a tombo.myrtle -- env REMOTE_THEME=base16-$BASE16_THEME bash -l -i";
     };
 
     profileExtra = ''
