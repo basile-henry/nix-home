@@ -40,8 +40,9 @@ in
       let g:deoplete#enable_at_startup = 1
 
       " Base16 colour scheme
-      if filereadable(expand("~/.vimrc_background"))
-        " let base16colorspace=256
+      if !empty($REMOTE_THEME)
+        colorscheme $REMOTE_THEME
+      elseif filereadable(expand("~/.vimrc_background"))
         source ~/.vimrc_background
       endif
 
