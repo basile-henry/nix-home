@@ -72,9 +72,7 @@ in
         \ }
 
       " LSP format on save
-      execute 'autocmd FileType '
-        \ . join(keys(g:LanguageClient_serverCommands), ',')
-        \ . ' autocmd BufWritePre <buffer> call LanguageClient#textDocument_formatting_sync()'
+      execute 'autocmd FileType rust,elm autocmd BufWritePre <buffer> call LanguageClient#textDocument_formatting_sync()'
       '';
 
     plugins = with pkgs.vimPlugins; [
