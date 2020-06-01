@@ -34,6 +34,9 @@ in
       set softtabstop=2
       set shiftwidth=2
 
+      set list!
+      set list listchars=tab:»·,trail:·
+
       let g:deoplete#enable_at_startup = 1
 
       " Base16 colour scheme
