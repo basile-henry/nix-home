@@ -96,6 +96,9 @@ in
       gitgutter
       fugitive
 
+      # Haskell
+      haskell-vim
+
       # Nix
       vim-nix
 
