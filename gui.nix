@@ -11,9 +11,12 @@
   home.packages = with pkgs; [
     discord
     slack
+    signal-desktop
+    vlc
     firefox
     chromium
     plasma-browser-integration
     spectacle
+    vscode
   ];
 }

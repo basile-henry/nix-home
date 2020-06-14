@@ -17,12 +17,15 @@
     gitAndTools.hub
     watchexec
     miniserve
+    exercism
+    gcc
 
     # Nix
     nix-index
 
     # Rust
     rustup
+    cargo-watch
 
     # Haskell
     ghc
