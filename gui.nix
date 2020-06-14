@@ -3,6 +3,7 @@
 {
   imports = [
     ./program/alacritty.nix
+    "${fetchTarball "https://github.com/msteen/nixos-vsliveshare/tarball/master"}/modules/vsliveshare/home.nix"
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -19,4 +20,7 @@
     spectacle
     vscode
   ];
+
+  # For VSCode Liveshare support
+  services.vsliveshare.enable = true;
 }
