@@ -63,7 +63,7 @@
       tombo = "mosh -a tombo.myrtle -- env REMOTE_THEME=base16-$BASE16_THEME bash -l -i";
     };
 
-    profileExtra = ''
+    initExtra = ''
       # Fix nix path for multi-user nix Ubuntu setups
       export NIX_PATH=/home/basile/.nix-defexpr/channels:$NIX_PATH
 
