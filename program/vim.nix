@@ -55,6 +55,9 @@ in
       " fzf
       noremap <C-P> :GFiles<CR>
 
+      " NERDCommenter
+      let NERDSpaceDelims=1
+
       " NERDTree
       noremap <Leader>n :NERDTreeToggleVCS<CR>
 
