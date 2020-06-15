@@ -9,8 +9,10 @@ in
       window.startup_mode = "Maximized";
       window.title = "Terminal";
 
+      env.TERM = "xterm-256color";
+
       shell = {
-        program = "bash";
+        program = "${pkgs.bashInteractive}/bin/bash";
         args = [ "-l" ];
       };
 
