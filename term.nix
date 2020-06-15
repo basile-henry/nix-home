@@ -12,9 +12,11 @@
     ripgrep
     htop
     mosh
+    jq
 
     # Dev
     gitAndTools.hub
+    gitAndTools.git-secret
     watchexec
     miniserve
     exercism
