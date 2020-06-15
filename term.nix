@@ -71,6 +71,7 @@
 
       # For bash autocomplete
       export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS
+      source /etc/profile.d/bash_completion.sh
 
       BASE16_SHELL="${pkgs.base16-shell}"
       [ -n "$PS1" ] && \
