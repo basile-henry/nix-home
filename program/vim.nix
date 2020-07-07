@@ -23,6 +23,7 @@ in
       set encoding=utf-8
       set termguicolors
       set spell spelllang=en_gb
+      set hidden
 
       set undofile
       set undodir=~/.config/nvim/undodir
@@ -89,6 +90,8 @@ in
       nerdtree
       nerdtree-git-plugin
 
+      syntastic
+
       # Language Server
       LanguageClient-neovim
 
@@ -100,7 +103,7 @@ in
       fugitive
 
       # Haskell
-      haskell-vim
+      # haskell-vim
 
       # Nix
       vim-nix

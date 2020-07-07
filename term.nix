@@ -22,6 +22,9 @@
     exercism
     gcc
 
+    # Shell
+    shellcheck
+
     # Nix
     nix-index
 
