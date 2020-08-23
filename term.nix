@@ -13,6 +13,8 @@
     htop
     mosh
     jq
+    lm_sensors
+
 
     # Dev
     gitAndTools.hub
@@ -21,6 +23,7 @@
     miniserve
     exercism
     gcc
+    cachix
 
     # Shell
     shellcheck
@@ -67,7 +70,7 @@
 
       ghcid = "ghcid --reverse-errors --no-height-limit --clear";
 
-      tombo = "mosh -a tombo.myrtle -- env REMOTE_THEME=base16-$BASE16_THEME bash -l -i";
+      tombo = "mosh --predict=always -a tombo.myrtle";
     };
 
     initExtra = ''
