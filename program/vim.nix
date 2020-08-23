@@ -6,9 +6,10 @@ in
   home.sessionVariables.EDITOR = "nvim";
 
   home.packages = with pkgs; [
-    elmPackages.elm-language-server
-    python3Packages.python-language-server
     unstable.rust-analyzer
+
+    # For CoC
+    unstable.nodejs
   ];
 
   programs.neovim = {
@@ -38,8 +39,6 @@ in
       set list!
       set list listchars=tab:»·,trail:·
 
-      let g:deoplete#enable_at_startup = 1
-
       " Base16 colour scheme
       if !empty($REMOTE_THEME)
         colorscheme $REMOTE_THEME
@@ -58,25 +57,10 @@ in
 
       " NERDCommenter
       let NERDSpaceDelims=1
+      let NERDDefaultAlign='left'
 
       " NERDTree
       noremap <Leader>n :NERDTreeToggleVCS<CR>
-
-      " LSP
-      let g:LanguageClient_loggingFile =  expand('~/.local/share/nvim/LanguageClient.log')
-      nnoremap <Leader>m :call LanguageClient_contextMenu()<CR>
-
-      let g:LanguageClient_serverCommands = {
-        \ 'elm': ['elm-language-server'],
-        \ 'python': ['pyls'],
-        \ 'rust': ['rust-analyzer'],
-        \ }
-      let g:LanguageClient_rootMarkers = {
-        \ 'elm': ['elm.json'],
-        \ }
-
-      " LSP format on save
-      execute 'autocmd FileType rust,elm autocmd BufWritePre <buffer> call LanguageClient#textDocument_formatting_sync()'
       '';
 
     plugins = with pkgs.vimPlugins; [
@@ -84,7 +68,6 @@ in
       base16-vim
       lightline-vim
       fzf-vim
-      deoplete-nvim
 
       nerdcommenter
       nerdtree
@@ -93,7 +76,13 @@ in
       syntastic
 
       # Language Server
-      LanguageClient-neovim
+      unstable.vimPlugins.coc-nvim
+      unstable.vimPlugins.coc-rust-analyzer
+      unstable.vimPlugins.coc-fzf
+
+      # Config formats
+      vim-json
+      vim-toml
 
       # Elm
       vim-elm-syntax
