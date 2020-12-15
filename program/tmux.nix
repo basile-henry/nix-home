@@ -15,6 +15,9 @@
       set -g mouse on
       set-option -sa terminal-overrides ',*:RGB'
 
+      # For multi-user edit
+      set -g window-size smallest
+
       # Setup a workspace with `tmux work`
       set -s command-alias[0] work='split-window -h -d -p 65 vim .; split-window -v; select-pane -t :.+'
       '';
