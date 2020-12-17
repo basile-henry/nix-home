@@ -116,6 +116,7 @@
       f = "fetch";
       co = "checkout";
       r = "rebase";
+      root = "rev-parse --show-toplevel";
       # Rebase with pre-commit check at each commit
       rc = "rebase -x 'git reset --soft HEAD~1 && git commit -C HEAD@{1}'";
 
