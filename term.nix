@@ -14,10 +14,11 @@
     mosh
     jq
     lm_sensors
-
+    vnstat
 
     # Dev
     gitAndTools.hub
+    gitAndTools.gh
     gitAndTools.git-secret
     watchexec
     miniserve
@@ -34,6 +35,7 @@
     # Rust
     rustup
     cargo-watch
+    cargo-edit
 
     # Haskell
     ghc
@@ -45,6 +47,10 @@
     elmPackages.elm
     elmPackages.elm-analyse
     elmPackages.elm-format
+
+    # Dhall
+    dhall
+    dhall-lsp-server
   ];
 
   programs.bat = {
@@ -76,6 +82,7 @@
     initExtra = ''
       # Fix nix path for multi-user nix Ubuntu setups
       export NIX_PATH=/home/basile/.nix-defexpr/channels:$NIX_PATH
+      export PATH=/home/basile/.cargo/bin:$PATH
 
       # For bash autocomplete
       export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS
@@ -104,6 +111,11 @@
     };
   };
 
+  programs.direnv.enable = true;
+  programs.direnv.enableNixDirenvIntegration = true;
+
+  services.lorri.enable = true;
+
   programs.git = {
     enable = true;
     userName = "Basile Henry";
@@ -129,6 +141,8 @@
 
     extraConfig = {
       merge.conflictstyle = "diff3";
+      core.editor = "vim";
+      pull.rebase = "true";
     };
   };
 
