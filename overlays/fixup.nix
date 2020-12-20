@@ -2,9 +2,9 @@ self: super:
 
 {
   # Enable accelerated video decoding
-  chromium = super.chromium.overrideAttrs (_: {
+  chromium = super.chromium.override {
     enableVaapi = true;
-  });
+  };
 
   # mosh from nixos-20.09 doesn't include a colour fix
   mosh = super.mosh.overrideAttrs (attrs: {
