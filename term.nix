@@ -98,7 +98,12 @@
         path="$(git rev-parse --absolute-git-dir)/../../$name"
         commit="''${2:--}"
 
-        git worktree add -b "$name" "$path" "$commit"
+        if git rev-parse --verify --quiet "$name"; then
+          git worktree add "$path"
+        else
+          git worktree add -b "$name" "$path" "$commit"
+        fi
+
         tmux new-window -c "$path" -n "$name"
       }
       '';
