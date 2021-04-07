@@ -21,8 +21,9 @@
       # Disable copy on mouse release
       unbind -T copy-mode-vi MouseDragEnd1Pane
 
-      # Setup a workspace with `tmux work`
-      set -s command-alias[0] work='split-window -h -d -p 65 vim .; split-window -v; select-pane -t :.+'
+      # Make split-window stay in the current directory
+      bind % split-window -h -c "#{pane_current_path}"
+      bind '"' split-window -v -c "#{pane_current_path}"
       '';
 
     plugins = with pkgs; [

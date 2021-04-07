@@ -92,6 +92,15 @@
       [ -n "$PS1" ] && \
           [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
               eval "$("$BASE16_SHELL/profile_helper.sh")"
+
+      new-workspace() {
+        name="$1"
+        path="$(git rev-parse --absolute-git-dir)/../../$name"
+        commit="''${2:--}"
+
+        git worktree add -b "$name" "$path" "$commit"
+        tmux new-window -c "$path" -n "$name"
+      }
       '';
   };
 
