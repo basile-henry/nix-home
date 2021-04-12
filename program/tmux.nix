@@ -26,6 +26,9 @@
       bind '"' split-window -v -c "#{pane_current_path}"
       '';
 
+    # Makes it difficult to share tmux session otherwise
+    secureSocket = false;
+
     plugins = with pkgs; [
       { plugin = tmuxPlugins.resurrect;
         extraConfig = ''
