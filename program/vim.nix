@@ -7,12 +7,15 @@ in
 
   home.packages = with pkgs; [
     unstable.rust-analyzer
+    unstable.ccls
 
     # For CoC
     unstable.nodejs
 
     unstable.rnix-lsp
   ];
+
+  xdg.configFile."nvim/coc-settings.json".text = builtins.readFile ./coc-settings.json;
 
   programs.neovim = {
     enable = true;

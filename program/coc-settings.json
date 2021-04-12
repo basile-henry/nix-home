@@ -1,0 +1,24 @@
+{ "languageserver": {
+    "nix": {
+      "command": "rnix-lsp",
+      "filetypes": [
+        "nix"
+      ]
+    },
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cpp", "objc", "objcpp"],
+      "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+      "initializationOptions": {
+         "cache": {
+           "directory": "/tmp/ccls"
+         }
+       }
+    }
+  },
+  "rust-analyzer.checkOnSave.command": "clippy",
+  "coc.preferences.formatOnSaveFiletypes": [
+    "rust",
+    "cpp"
+  ]
+}
