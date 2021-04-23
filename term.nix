@@ -95,7 +95,7 @@
 
       new-workspace() {
         name="$1"
-        path="$(git rev-parse --absolute-git-dir)/../../$name"
+        path="$(git rev-parse --show-toplevel)/../$name"
         commit="''${2:--}"
 
         if git rev-parse --verify --quiet "$name"; then
