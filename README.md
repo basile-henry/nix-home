@@ -6,7 +6,7 @@ For NixOS:
 ```bash
 git clone git@github.com:basile-henry/nix-home.git ~/.config/nixpkgs/
 
-NIXOS=20.03
+NIXOS=21.05
 nix-channel --add "https://nixos.org/channels/nixos-$NIXOS" nixos
 nix-channel --add "https://nixos.org/channels/nixos-$NIXOS" nixpkgs
 nix-channel --add "https://nixos.org/channels/nixos-unstable" nixpkgs-unstable
@@ -20,7 +20,7 @@ For non-NixOS (for some reason only the root channels are used by nix-env/home-m
 ```bash
 git clone git@github.com:basile-henry/nix-home.git ~/.config/nixpkgs/
 
-NIXOS=20.03
+NIXOS=21.05
 sudo $(which nix-channel) --add "https://nixos.org/channels/nixos-$NIXOS" nixos
 sudo $(which nix-channel) --add "https://nixos.org/channels/nixos-$NIXOS" nixpkgs
 sudo $(which nix-channel) --add "https://nixos.org/channels/nixos-unstable" nixpkgs-unstable

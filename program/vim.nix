@@ -187,8 +187,6 @@ in
       jedi-vim
     ];
 
-    # Disable python 2 provider
-    withPython = false;
     withRuby = false;
   };
 }
