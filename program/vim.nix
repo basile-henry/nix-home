@@ -145,6 +145,18 @@ in
       " Formatting selected code.
       xmap <leader>f  <Plug>(coc-format-selected)
       nmap <leader>f  <Plug>(coc-format-selected)
+
+      " coc-fzf
+      nnoremap <silent> <leader><space> :<C-u>CocFzfList<CR>
+      nnoremap <silent> <leader>a       :<C-u>CocFzfList actions<CR>
+      nnoremap <silent> <leader>b       :<C-u>CocFzfList diagnostics --current-buf<CR>
+      nnoremap <silent> <leader>B       :<C-u>CocFzfList diagnostics<CR>
+      nnoremap <silent> <leader>c       :<C-u>CocFzfList commands<CR>
+      nnoremap <silent> <leader>e       :<C-u>CocFzfList extensions<CR>
+      nnoremap <silent> <leader>l       :<C-u>CocFzfList location<CR>
+      nnoremap <silent> <leader>o       :<C-u>CocFzfList outline<CR>
+      nnoremap <silent> <leader>s       :<C-u>CocFzfList symbols<CR>
+      nnoremap <silent> <leader>p       :<C-u>CocFzfListResume<CR>
       '';
 
     plugins = with pkgs.vimPlugins; [
