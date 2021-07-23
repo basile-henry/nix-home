@@ -9,7 +9,7 @@
     clock24 = true;
     keyMode = "vi";
     terminal = "tmux-256color";
-    historyLimit = 10000;
+    historyLimit = 30000;
     escapeTime = 0;
     extraConfig = ''
       set -g mouse on
@@ -24,6 +24,18 @@
       # Make split-window stay in the current directory
       bind % split-window -h -c "#{pane_current_path}"
       bind '"' split-window -v -c "#{pane_current_path}"
+
+      # Vim-like pane movement
+      bind -r h select-pane -L
+      bind -r j select-pane -D
+      bind -r k select-pane -U
+      bind -r l select-pane -R
+
+      # Vim-like pane resizing
+      bind -r C-h resize-pane -L
+      bind -r C-j resize-pane -D
+      bind -r C-k resize-pane -U
+      bind -r C-l resize-pane -R
       '';
 
     # Makes it difficult to share tmux session otherwise
