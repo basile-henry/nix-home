@@ -80,9 +80,16 @@
     };
 
     initExtra = ''
+      if [[ -f "/etc/profile.d/nix.sh" ]] && ! command -v nix-env > /dev/null; then
+        source /etc/profile.d/nix.sh
+      fi
+
       # Fix nix path for multi-user nix Ubuntu setups
-      export NIX_PATH=/home/basile/.nix-defexpr/channels:$NIX_PATH
-      export PATH=/home/basile/.cargo/bin:$PATH
+      if [[ -d "/etc/nix/" ]]; then
+        export NIX_PATH=/home/basile/.nix-defexpr/channels:$NIX_PATH
+      fi
+
+      export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$HOME/.cargo/bin:$PATH"
 
       # For bash autocomplete
       export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS
