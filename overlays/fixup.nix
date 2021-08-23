@@ -10,7 +10,8 @@ self: super:
 
     src = builtins.fetchGit {
       url = "ssh://git@github.com/mobile-shell/mosh.git";
-      rev = "03087e7a761df300c2d8cd6e072890f8e1059dfa";
+      ref = "master";
+      rev = "e023e81c08897c95271b4f4f0726ec165bb6e1bd";
     };
   });
 }
