@@ -120,22 +120,12 @@
     enable = true;
 
     settings = {
-      character = {
-        symbol = "➜";
-        error_symbol = "✗";
-        use_symbol_for_status = true;
-      };
       cmd_duration.show_milliseconds = true;
       username.disabled = true;
       package.disabled = true;
       aws.disabled = true;
     };
   };
-
-  programs.direnv.enable = true;
-  programs.direnv.enableNixDirenvIntegration = true;
-
-  services.lorri.enable = true;
 
   programs.git = {
     enable = true;
@@ -159,6 +149,8 @@
       wl = "worktree list";
       wa = "worktree add";
     };
+
+    delta.enable = true;
 
     extraConfig = {
       merge.conflictstyle = "diff3";
