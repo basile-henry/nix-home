@@ -5,7 +5,7 @@ let unstable = import <nixpkgs-unstable> {};
 
     vscode-with-extensions = pkgs.vscode-with-extensions.override {
       vscodeExtensions = (with unstable.vscode-extensions; [
-        bbenoist.Nix
+        bbenoist.nix
         ms-python.python
         ms-vsliveshare.vsliveshare
         ms-vscode-remote.remote-ssh
