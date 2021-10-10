@@ -156,6 +156,7 @@
       merge.conflictstyle = "diff3";
       core.editor = "vim";
       pull.rebase = "true";
+      init.defaultBranch = "main";
     };
   };
 
