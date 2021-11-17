@@ -59,6 +59,9 @@ in
 
       let mapleader=" "
 
+      let g:hoogle_fzf_cache_file = "~/.cache/hoogle_fzf"
+      noremap <C-H> :Hoogle<CR>
+
       " fzf
       noremap <C-P> :GFiles<CR>
 
@@ -191,6 +194,16 @@ in
 
       # Haskell
       # haskell-vim
+
+      (pkgs.vimUtils.buildVimPlugin {
+        name = "fzf-hoogle";
+        src = pkgs.fetchFromGitHub {
+          owner = "monkoose";
+          repo = "fzf-hoogle.vim";
+          rev = "0c1620d9e0216c93f894d908e4eb8c513aaa79fc";
+          sha256 = "16j3v8g56ivv2ls2s5rxfx0722b1gcfcjk5gdnn7p18rwzkrdj6s";
+        };
+      })
 
       # Nix
       vim-nix
