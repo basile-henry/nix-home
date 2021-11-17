@@ -150,13 +150,13 @@
       wa = "worktree add";
     };
 
-    delta.enable = true;
 
     extraConfig = {
       merge.conflictstyle = "diff3";
       core.editor = "vim";
       pull.rebase = "true";
       init.defaultBranch = "main";
+      rerere.enable = true;
     };
   };
 
