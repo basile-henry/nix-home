@@ -1,9 +1,8 @@
 self: super:
 
 {
-  base16-shell = builtins.fetchGit {
-    url = "https://github.com/chriskempson/base16-shell.git";
-    ref = "master";
-    rev = "ce8e1e540367ea83cc3e01eec7b2a11783b3f9e1";
+  base16-shell = builtins.fetchTarball {
+    url = "https://github.com/chriskempson/base16-shell/archive/refs/heads/master.tar.gz";
+    sha256 = "1yj36k64zz65lxh28bb5rb5skwlinixxz6qwkwaf845ajvm45j1q";
   };
 }
