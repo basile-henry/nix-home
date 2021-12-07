@@ -13,6 +13,8 @@ in
     unstable.nodejs
 
     unstable.rnix-lsp
+
+    unstable.zls
   ];
 
   xdg.configFile."nvim/coc-settings.json".text = builtins.readFile ./coc-settings.json;
@@ -175,11 +177,11 @@ in
       syntastic
 
       # Language Server
-      unstable.vimPlugins.coc-nvim
-      unstable.vimPlugins.coc-rust-analyzer
-      unstable.vimPlugins.coc-fzf
-      unstable.vimPlugins.coc-json
-      unstable.vimPlugins.coc-spell-checker
+      coc-nvim
+      coc-rust-analyzer
+      coc-fzf
+      coc-json
+      coc-spell-checker
 
       # Config formats
       vim-json
@@ -193,7 +195,7 @@ in
       fugitive
 
       # Haskell
-      # haskell-vim
+      haskell-vim
 
       (pkgs.vimUtils.buildVimPlugin {
         name = "fzf-hoogle";
@@ -210,6 +212,8 @@ in
 
       # Python
       jedi-vim
+
+      zig-vim
     ];
 
     withRuby = false;
