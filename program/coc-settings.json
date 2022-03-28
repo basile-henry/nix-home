@@ -18,11 +18,18 @@
            "directory": "/tmp/ccls"
          }
        }
+    },
+    "elmLS": {
+      "command": "elm-language-server",
+      "filetypes": ["elm"],
+      "rootPatterns": ["elm.json"]
     }
   },
   "rust-analyzer.checkOnSave.command": "clippy",
+  "codeLens.enable": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "rust",
-    "cpp"
+    "cpp",
+    "elm"
   ]
 }

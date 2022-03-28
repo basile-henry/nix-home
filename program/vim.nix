@@ -6,6 +6,7 @@ in
   home.sessionVariables.EDITOR = "nvim";
 
   home.packages = with pkgs; [
+    elmPackages.elm-language-server
     unstable.rust-analyzer
     unstable.ccls
 
