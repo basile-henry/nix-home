@@ -1,5 +1,7 @@
 { config, lib, pkgs, ... }:
 
+let unstable = import <nixpkgs-unstable> {};
+in
 {
   imports = [
     ./program/tmux.nix
@@ -11,7 +13,7 @@
     fd
     ripgrep
     htop
-    mosh
+    unstable.mosh
     jq
     lm_sensors
     vnstat
