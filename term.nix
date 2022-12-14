@@ -99,8 +99,8 @@ in
 
       BASE16_SHELL="${pkgs.base16-shell}"
       [ -n "$PS1" ] && \
-          [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-              eval "$("$BASE16_SHELL/profile_helper.sh")"
+        [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+            source "$BASE16_SHELL/profile_helper.sh"
 
       new-workspace() {
         name="$1"
